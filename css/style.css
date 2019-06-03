@@ -1,0 +1,125 @@
+.carousel {
+  margin-left: 20px;
+}
+.titulos{
+  display: flex;
+}
+.carousel__view {
+  width: calc((200px*4) + 22px);
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  margin-left: 200px;
+}
+.carousel__control {
+  position: absolute;
+  z-index: 1;
+  height: 300px;
+  width: 70px;
+  background-color: rgba(221, 221, 221, 0.5);
+  transition: background-color .3s;
+  display: table;
+}
+.carousel__control .icon {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.carousel__control:hover {
+  background-color: rgba(221, 221, 221, 0.8);
+}
+.carousel__control:first-of-type {
+  left: 0;
+}
+.carousel__control:last-of-type {
+  right: 0;
+}
+
+.product-list {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  transition: transform .3s;
+  transform: translateX(0px);
+  list-style: none;
+  height: 300px;
+}
+.produtolistareferencia{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 300px;
+}
+.produtoitem{
+  width: 200px;
+  height: 300px;
+}
+.product-list__item {
+  width: 200px;
+  height: 300px;
+  display: inline-block;
+  margin: 0 1px;
+}
+.produto-referencia{
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.produto-referencia span{
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+.product {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.product span {
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+.produto-referencia[data-slide="1"] {
+  background-color: blue;
+}
+.product[data-slide="0"] {
+  background-color: darkcyan;
+}
+.product[data-slide="1"] {
+  background-color: blue;
+}
+.product[data-slide="2"] {
+  background-color: green;
+}
+.product[data-slide="3"] {
+  background-color: yellow;
+}
+.product[data-slide="4"] {
+  background-color: orange;
+}
+.product[data-slide="5"] {
+  background-color: red;
+}
+.product[data-slide="6"] {
+  background-color: pink;
+}
+.product[data-slide="7"] {
+   background-color: black;
+ }
+.product[data-slide="8"] {
+  background-color: blueviolet;
+}
+.product[data-slide="9"] {
+  background-color: coral;
+}
+
+body {
+  margin: 50px;
+}
