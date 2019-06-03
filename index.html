@@ -19,68 +19,17 @@
     </div>
   </li>
 </ul>
-  <div class="carousel js-product-carousel">
-  <div class="carousel__view">
-    <span class="carousel__control js-carousel-prev"><i class="icon">previous</i></span>
-    <span class="carousel__control js-carousel-next"><i class="icon">next</i></span>
-    <ul class="product-list js-product-list" id="produtos">
+  <div class="carousel js-carousel">
+  <div class="carousel_visao">
+    <span class="carousel_controles js-antes"><i class="icon"> <img src="img/left-chevron.png"></i></span>
+    <span class="carousel_controles js-prox"><i class="icon"> <img src="img/right-chevron.png"> </i></span>
+    <ul class="produto_lista js-lista" id="produtos">
     </ul>
   </div>
 </div>
-  <script>
-
-    function X(myObj) {
-      var len = myObj.data.widget.size;
-      var produtos= '';
-      var precoAntigo = '';
-      var pagamento = '';
-
-      //Para aparecer os R$ antes nas condições de pagamento.
-      split = myObj.data.reference.item.productInfo.paymentConditions.split("de");
-      split[1] = ' de R$' +  split[1];
-      var pagamentoReferencia = split.join("");
-
-      // O produto de referência
-      var referencia = '<img src = "https://' + myObj.data.reference.item.imageName+'"/> <br>' +
-              myObj.data.reference.item.name + '<br> \n' +
-              'De: ' + myObj.data.reference.item.oldPrice + '<br> \n'+
-              'Por:' + myObj.data.reference.item.price + '<br> \n' +
-               pagamentoReferencia
-
-      //Para pegar o Array das recomendações
-      for(var i=0; i<len; i++){
-
-        //Para aparecer o R$ antes nas condições de pagamento
-        split = myObj.data.recommendation[i].productInfo.paymentConditions.split("de");
-        split[1] = ' de R$' +  split[1];
-        pagamento = split.join("");
-
-        // Caso não tiver valor anterior
-        if(myObj.data.recommendation[i].oldPrice != null){
-          precoAntigo = 'De:' +  myObj.data.recommendation[i].oldPrice + '<br>'
-        }else {
-          precoAntigo = '';
-        }
-
-        // Os itens das recomendações
-        produtos += '<li class="product-list__item">\n' +
-                '<div data-slide="'+i+'" class="product">\n' +
-                '<span>\n'+
-                '<img src = "https://' + myObj.data.recommendation[i].imageName+'"/> <br>' +
-                myObj.data.recommendation[i].name + '<br>' +
-                precoAntigo +
-                'Por: ' +myObj.data.recommendation[i].price + '<br>' +
-                pagamento + ' sem juros' +
-                '</span>  </div> </li>'
-
-
-      }
-      document.getElementById('produtos').innerHTML = produtos;
-      document.getElementById('referencia').innerHTML = referencia;
-    }
-  </script>
+  <script src="js/vitrine.js"></script>
   <script type="text/javascript" src="http://roberval.chaordicsystems.com/challenge/challenge.json?callback=X"></script>
-    <script  src="js/index.js"></script>
+    <script  src="js/carousel.js"></script>
 
 </body>
 
